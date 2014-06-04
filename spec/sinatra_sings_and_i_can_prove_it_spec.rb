@@ -17,7 +17,7 @@ describe "Sinatra sings and I can prove it App" do
   end
 
   it "sings loud and clear" do
-    get "/"
+    get "/", tune_title: "RSpec"
     expect(last_response.body).to eq "Singing the RSpec tune loud and clear"
   end
 
