@@ -15,4 +15,9 @@ describe "Sinatra sings and I can prove it App" do
     get "/"
     expect(last_response).to be_ok
   end
+
+  it "sings loud and clear" do
+    get "/"
+    expect(last_response.body).to eq "Singing the RSpec tune loud and clear"
+  end
 end
