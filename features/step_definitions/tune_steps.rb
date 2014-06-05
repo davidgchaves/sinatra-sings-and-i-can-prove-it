@@ -1,7 +1,7 @@
 When /^Sinatra is told to sing the (\w+) tune$/ do |tune_title|
-    pending # express the regexp above with the code you wish you had
+  visit "/?tune_title=#{tune_title}"
 end
 
 Then /^he sings the (\w+) tune loud and clear$/ do |tune_title|
-    pending # express the regexp above with the code you wish you had
+  expect(page).to have_content "#{tune_title} tune"
 end
