@@ -3,12 +3,13 @@ ENV['RACK_ENV'] = 'test'
 require_relative '../sinatra_sings_and_i_can_prove_it'
 require 'rspec'
 require 'rack/test'
+require 'capybara/rspec'
 
-describe "Sinatra sings and I can prove it App" do
+describe "Sinatra sings and I can prove it App", type: :feature do
   include Rack::Test::Methods
 
   def app
-    Sinatra::Application
+    Capybara.app = Sinatra::Application.new
   end
 
   it "sings the RSpec tune" do
