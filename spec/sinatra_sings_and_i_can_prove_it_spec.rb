@@ -25,4 +25,9 @@ describe "Sinatra sings and I can prove it App" do
     get "/", tune_title: "My Way"
     expect(last_response.body).to include "My Way"
   end
+
+  it "sings the Capybara-meets-RSpec tune" do
+    visit "/?tune_title=Capybara-meets-RSpec"
+    expect(page).to have_content "Capybara-meets-RSpec tune"
+  end
 end
